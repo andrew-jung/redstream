@@ -1,0 +1,19 @@
+{
+  "name": "bikescrape",
+  "version": "1.0.0",
+  "description": "gimme data",
+  "main": "action.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-jung/redstream.git"
+  },
+  "author": "andrew-jung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrew-jung/redstream/issues"
+  },
+  "homepage": "https://github.com/andrew-jung/redstream#readme"
+}
