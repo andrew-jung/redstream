@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const fs = require('fs');
-import { join } from 'path';
+const path = require('path');
 
 const dataDir = "/data";
 const now = new Date();
@@ -11,7 +11,7 @@ const day = now.getUTCDate().toString().padStart(2, '0')
 const hour = now.getUTCHours().toString()
 const fileDate = `${year}-${month}-${day}-${hour}-00-00`
 
-const pathToData = join(__dirname, dataDir, fileDate) + '.json';
+const pathToData = path.join(__dirname, dataDir, fileDate) + '.json';
 
 let data = [];
 
