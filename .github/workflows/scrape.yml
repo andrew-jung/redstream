@@ -1,17 +1,17 @@
 on:
     schedule:
-        - cron: '0 * * * *'
-    name: Check Stations
-    jobs:
-        build:
-            name: build
-            runs-on: ubuntu-latest
-            steps:
-                - uses: actions/checkout@master
-                - name: Build
-                  run: npm install
-                - name: Scrape
-                  run: npm run action
-                - uses: mikeal/publish-to-github-action@master
-                env:
-                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - cron:  '0 * * * *'  # Every hour
+  name: Scrape Stations'
+  jobs:
+    build:
+      name: Build
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@master
+      - name: Build
+        run: npm install
+      - name: Scrape
+        run: npm run action
+      - uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
