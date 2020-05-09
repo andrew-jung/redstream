@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
+const fetch = require("node-fetch");
 
 const dataDir = "/data";
 const now = new Date();
@@ -19,9 +20,8 @@ const stationsUrl = "https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_sta
 async function getStationStatuses() {
     fetch(stationsUrl).then((resp) => resp.json()).then(function(response){
         data = response.data.stations;
+        fs.writeFileSync(path.resolve(pathToData), JSON.stringify(data, null, 2))
     })
 }
 
-getStationStatuses().then(() => {
-    fs.writeFileSync(path.resolve(pathToData), JSON.stringify(data, null, 2))
-});
+getStationStatuses();
